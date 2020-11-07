@@ -7,8 +7,9 @@ class CoAPServer(CoAP):
         self.add_resource('basic/', BasicResource())
 
 def main():
-    server = CoAPServer("0.0.0.0", 5683)
+    server = CoAPServer("0.0.0.0", 5555)
     try:
+        print("Listening on Port 5555...")
         server.listen(10)
     except KeyboardInterrupt:
         print("Server Shutdown")
