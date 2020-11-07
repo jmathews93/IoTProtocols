@@ -3,11 +3,11 @@ from pythonosc.osc_server import BlockingOSCUDPServer
 
 
 def print_handler(address, *args):
-    print(f"{address}: {args}")
+    print("{address}: {args}")
 
 
 def default_handler(address, *args):
-    print(f"DEFAULT {address}: {args}")
+    print("DEFAULT {address}: {args}")
 
 
 dispatcher = Dispatcher()
