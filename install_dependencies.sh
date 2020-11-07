@@ -8,7 +8,7 @@ PY_VER3="${PIP3_VER: -12}"
 echo "${PY_VER:1:8}"
 echo "${PY_VER3:1:8}"
 
-if [ "${PY_VER:1:8}" = "python 3"] 
+if [ "${PY_VER:1:8}" = "python 3" ] 
 then
     echo "PIP"
     # pip install paho-mqtt

@@ -11,9 +11,9 @@ def main():
     try:
         server.listen(10)
     except KeyboardInterrupt:
-        print "Server Shutdown"
+        print("Server Shutdown")
         server.close()
-        print "Exiting..."
+        print("Exiting...")
 
 if __name__ == '__main__':
     main()
