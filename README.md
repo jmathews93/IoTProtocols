@@ -1,3 +1,9 @@
+This project using python version 2.7.13.
+
+Be sure to install pyenv and virtual env.
+
+https://realpython.com/intro-to-pyenv/
+
 OSC
 ----
 
