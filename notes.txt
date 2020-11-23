@@ -1,0 +1,34 @@
+If you use CoAPthon software in your research, please cite:
+
+G.Tanganelli, C. Vallati, E.Mingozzi, "CoAPthon: Easy Development of CoAP-based IoT Applications with Python", IEEE World Forum on Internet of Things (WF-IoT 2015)
+
+Software available at https://github.com/Tanganelli/CoAPthon
+
+
+def _recursive(x):
+    try:
+        osc.send_message(b'/ping', x)
+    except:
+        # reallocate the memory with one fewer byte
+        PyMem_Realloc(x, sys.getsizeof(x) - 1)
+        _recursive(x)
+
+x = PyMem_Malloc(2084100)
+_recursive(x)
+
+
+oscli send --host "192.168.1.85" --port 5555 --encoding "utf8" "/ping" "whatever"
+
+osc.__dir__()
+['address', 'port', 'sock', 'encoding', 'encoding_errors',
+'stats', '__module__', '__doc__', '__init__', 'send_message',
+'send_bundle', '__dict__', '__weakref__', '__repr__', '__hash__',
+'__str__', '__getattribute__', '__setattr__', '__delattr__', '__lt__',
+'__le__', '__eq__', '__ne__', '__gt__', '__ge__', '__new__',
+'__reduce_ex__', '__reduce__', '__subclasshook__', '__init_subclass__',
+'__format__', '__sizeof__', '__dir__', '__class__']
+
+
+https://stackoverflow.com/questions/22819214/udp-message-too-long
+OSX has an internal UDP limit of 9253. This can be changed by running the following.
+sudo sysctl -w net.inet.udp.maxdgram=65535
