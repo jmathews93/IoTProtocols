@@ -8,9 +8,7 @@ if __name__ == "__main__":
         file_name = sys.argv[1]
         print("file name: ", file_name)
         file = open(file_name, "r")
-        json = file.read()
-        ip = sys.argv[2]
-        print("IP: ", str(ip))
+        file_payload = file.read()
         # print("file contents: ", json)
 
         # host = "192.168.1.5"
@@ -19,6 +17,7 @@ if __name__ == "__main__":
         path = "basic"
 
         client = HelperClient(server=(host, port))
-        response = client.put(path, "hello")
+        # Hard limit of 9203 for the substring/ character limit b\c OSX
+        response = client.put(path, file_payload[0:9203])
         print(response.pretty_print())
         client.stop()
