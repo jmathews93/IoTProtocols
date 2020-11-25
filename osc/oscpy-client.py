@@ -11,8 +11,9 @@ if __name__ == "__main__":
         file_name = sys.argv[2]
         file = open(file_name, "r")
         json = file.read()
+        print(json)
         osc = OSCClient(ip, port, encoding='utf8')
-        osc.send_message('/ping', [bytes(json[0:9203], 'utf-8')], safer=True)
+        osc.send_message('/ping', [json[0:9203]], safer=True)
 
 
 # osc = OSCClient("192.168.1.85", 5555, encoding='utf8')   # JA
