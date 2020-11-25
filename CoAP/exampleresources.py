@@ -7,10 +7,12 @@ class BasicResource(Resource):
         self.payload = "Basic Resource"
 
     def render_GET(self, request):
+        print "here"
         return self
 
     def render_PUT(self, request):
         self.payload = request.payload
+        print self.payload
         return self
 
     def render_POST(self, request):

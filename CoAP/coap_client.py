@@ -4,14 +4,17 @@ import sys
 
 if __name__ == "__main__":
 
-    if len(sys.argv) > 1:
+    if len(sys.argv) > 2:
         file_name = sys.argv[1]
         print("file name: ", file_name)
         file = open(file_name, "r")
         json = file.read()
-        print("file contents: ", json)
+        ip = sys.argv[2]
+        print("IP: ", str(ip))
+        # print("file contents: ", json)
 
-        host = "192.168.1.8"
+        # host = "192.168.1.5"
+        host = sys.argv[2]
         port = 5555
         path = "basic"
 
