@@ -19,6 +19,6 @@ if __name__ == "__main__":
         path = "basic"
 
         client = HelperClient(server=(host, port))
-        response = client.get(path)
+        response = client.put(path, "hello")
         print(response.pretty_print())
         client.stop()
