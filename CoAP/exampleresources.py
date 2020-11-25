@@ -12,9 +12,9 @@ class BasicResource(Resource):
 
     def render_PUT(self, request):
         self.payload = request.payload
-        print("\n\n*********PAYLOAD***********")
+        print("\n\n*************************PAYLOAD*************************")
         print("* " + self.payload)
-        print("*********PAYLOAD***********\n\n")
+        print("\n\n*************************PAYLOAD*************************")
         return self
 
     def render_POST(self, request):
