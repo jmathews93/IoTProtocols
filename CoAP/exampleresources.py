@@ -13,7 +13,7 @@ class BasicResource(Resource):
     def render_PUT(self, request):
         self.payload = request.payload
         print("\n\n*********PAYLOAD***********")
-        print("*", self.payload)
+        print("* " + self.payload)
         print("*********PAYLOAD***********\n\n")
         return self
 
