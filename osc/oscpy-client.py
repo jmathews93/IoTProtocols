@@ -2,7 +2,7 @@ from oscpy.client import OSCClient
 import json, sys
 
 # Hard limit of 9203 for the substring/ character limit
-if __name__ == "__main__":
+def main():
     if len(sys.argv) > 1:
         ip = sys.argv[1]
         print("IP: ", ip)
@@ -15,6 +15,8 @@ if __name__ == "__main__":
         osc = OSCClient(ip, port, encoding='utf8')
         osc.send_message('/ping', [json[0:9203]], safer=True)
 
+if __name__ == "__main__":
+    main()
 
 # osc = OSCClient("192.168.1.85", 5555, encoding='utf8')   # JA
 #osc = OSCClient("73.131.93.124", 5555, encoding='utf8')  # Jared

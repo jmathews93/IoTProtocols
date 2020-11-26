@@ -10,8 +10,7 @@ def callback_bundle(*values):
     print("in bundle")
     print(values)
 
-
-if __name__ == "__main__":
+def main():
     ip = '0.0.0.0'
 
     osc = OSCThreadServer(encoding='utf8')
@@ -23,3 +22,6 @@ if __name__ == "__main__":
     osc.bind(b'/pong', callback_bundle)
     sleep(1000)
     # osc.stop()
+
+if __name__ == "__main__":
+    main()
