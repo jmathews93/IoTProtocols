@@ -7,9 +7,9 @@ https://realpython.com/intro-to-pyenv/
 OSC
 ----
 
-python3 osc/client_server/osc_server.py [IP_ADDRESS]
+python osc/oscpy-server.py
 
-python3 osc/client_server/osc_client.py [IP_ADDRESS]
+python osc/coscpy-client.py [IP_ADDRESS] [File To Send]
 
 
 CoAP
@@ -17,4 +17,4 @@ CoAP
 
 python CoAP/coap_server.py
 
-python CoAP/coap_client.py
+python CoAP/coap_client.py [IP_ADDRESS] [File To Send]
