@@ -53,21 +53,29 @@ def test_case_3():
         osc.send_message('/ping', [jsn[0:65000]], safer=True)
 
 def main():
+    print "Test Case 1:"
+    for i in range(100):
+        print "Trial", i, "\n"
+        test_case_1()
+        print "End Trial", i, "\n"
+        sleep(1)
+    sleep(15)
+    
+    print "Test Case 2:"
     for i in range(100):
         print "Trial", i, ":"
-        osc.send_message('/ping', [1])
-        sleep(3)
-        print "Started Test 1"
-        test_case_1()
-        sleep(5)
-        print "Started Test 2"
         test_case_2()
-        sleep(5)
-        print "Started Test 3"
-        test_case_3()
-        sleep(3)
-        osc.send_message('/ping', [1])
         print "End Trial", i, "\n"
+        sleep(1)
+    sleep(15)
+
+    print "Test Case 3"
+    for i in range(100):
+        print "Trial", i, ":"
+        test_case_3()
+        print "End Trial", i, "\n"
+        sleep(1)
+
 
 if __name__ == "__main__":
     main()
