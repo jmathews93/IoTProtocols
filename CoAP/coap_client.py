@@ -79,7 +79,7 @@ def main():
     #     print "End Trial", i, "\n"
     #     sleep(1)
     # sleep(15)
-    test_case_1()
+    test_case_2()
     # print "Test Case 2:"
     # for i in range(30):
     #     print "Trial", i, ":"
