@@ -46,7 +46,7 @@ def test_case_1():
         list = []
         list.append(data['allTides'][i]['time'])
         list.append(data['allTides'][i]['height'])
-        client.post(path, list)
+        client.put(path, list)
 
 
 
