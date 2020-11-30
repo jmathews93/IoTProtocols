@@ -52,7 +52,7 @@ def test_case_3():
     for i in range(loop_len):
         osc.send_message('/ping', [jsn[0:65000]], safer=True)
 
-# def main():
+def main():
 #     print "Test Case 1:"
 #     for i in range(30):
 #         print "Trial", i, "\n"
