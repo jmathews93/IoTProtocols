@@ -79,20 +79,20 @@ def main():
     #     sleep(3)
     # sleep(15)
     # 
-    print "Test Case 2:"
-    for i in range(30):
-        print "Trial", i, ":"
-        test_case_2()
-        print "End Trial", i, "\n"
-        sleep(3)
-    sleep(15)
-    #
-    # print "Test Case 3"
+    # print "Test Case 2:"
     # for i in range(30):
     #     print "Trial", i, ":"
-    #     test_case_3()
+    #     test_case_2()
     #     print "End Trial", i, "\n"
     #     sleep(3)
+    # sleep(15)
+    #
+    print "Test Case 3"
+    for i in range(30):
+        print "Trial", i, ":"
+        test_case_3()
+        print "End Trial", i, "\n"
+        sleep(3)
 
 
 if __name__ == "__main__":
