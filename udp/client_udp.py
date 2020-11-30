@@ -71,21 +71,21 @@ def test_case_3():
         UDPClientSocket.sendto(bytesToSend, serverAddressPort)
 
 def main():
-    print "Test Case 1:"
-    for i in range(30):
-        print "Trial", i, "\n"
-        test_case_1()
-        print "End Trial", i, "\n"
-        sleep(3)
-    sleep(15)
-    # 
-    # print "Test Case 2:"
+    # print "Test Case 1:"
     # for i in range(30):
-    #     print "Trial", i, ":"
-    #     test_case_2()
+    #     print "Trial", i, "\n"
+    #     test_case_1()
     #     print "End Trial", i, "\n"
     #     sleep(3)
     # sleep(15)
+    # 
+    print "Test Case 2:"
+    for i in range(30):
+        print "Trial", i, ":"
+        test_case_2()
+        print "End Trial", i, "\n"
+        sleep(3)
+    sleep(15)
     #
     # print "Test Case 3"
     # for i in range(30):
