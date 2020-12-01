@@ -51,7 +51,7 @@ def test_case_3():
     Sends the first 65000 characters in the string representation
     of the json file to simulate a max packet size.
     """
-    for i in range(1000):
+    for i in range(100):
         osc.send_message('/ping', [jsn[0:65000]], safer=True)
 
 def main():
