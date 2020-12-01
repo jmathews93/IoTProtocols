@@ -46,7 +46,7 @@ def test_case_1():
         list = []
         list.append(data['allTides'][i]['time'])
         list.append(data['allTides'][i]['height'])
-        client.post(path, list)
+        client.put(path, str(list))
 
 
 
@@ -69,7 +69,7 @@ def test_case_3():
     """
 
     for i in range(loop_len):
-        client.post(path, jsn[0:65000])
+        client.put(path, jsn[0:65000])
 
 def main():
     # print "Test Case 1:"
@@ -79,7 +79,7 @@ def main():
     #     print "End Trial", i, "\n"
     #     sleep(1)
     # sleep(15)
-    test_case_1()
+    test_case_3()
     # print "Test Case 2:"
     # for i in range(30):
     #     print "Trial", i, ":"
