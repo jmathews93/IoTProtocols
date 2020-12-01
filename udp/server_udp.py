@@ -1,7 +1,7 @@
 import socket
 
-localIP     = "127.0.0.1"
-localPort   = 20001
+localIP     = "0.0.0.0"
+localPort   = 5555
 bufferSize  = 1024
 
 msgFromServer       = "Hello UDP Client"
@@ -25,7 +25,7 @@ while(True):
 
     clientMsg = "Message from Client:{}".format(message)
     clientIP  = "Client IP Address:{}".format(address)
-    
+
     print(clientMsg)
     print(clientIP)
 
