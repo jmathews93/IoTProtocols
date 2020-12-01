@@ -71,7 +71,7 @@ def test_case_3():
         UDPClientSocket.sendto(bytesToSend, serverAddressPort)
 
 def main():
-    testbytes = str.endcode(1)
+    testbytes = str.encode(1)
     UDPClientSocket.sendto(testbytes, serverAddressPort)
     sleep(1)
 
