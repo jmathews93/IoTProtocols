@@ -75,7 +75,7 @@ def main():
     client.put(path, str(1))
     sleep(1)
     print "Test Case 1:"
-    for i in range(1):
+    for i in range(10):
         print "Trial", i, "\n"
         test_case_1()
         print "End Trial", i, "\n"
