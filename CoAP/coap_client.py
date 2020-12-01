@@ -42,7 +42,7 @@ def test_case_1():
     Sends each recrord in the JSON file separately.
     """
 
-    for i in range(loop_len):
+    for i in range(100):
         list = []
         list.append(data['allTides'][i]['time'])
         list.append(data['allTides'][i]['height'])
@@ -57,7 +57,7 @@ def test_case_2():
     of the json file.
     """
 
-    for i in range(loop_len):
+    for i in range(10000):
         client.put(path, jsn[0:9203])
 
 
@@ -68,18 +68,19 @@ def test_case_3():
     of the json file to simulate a max packet size.
     """
 
-    for i in range(loop_len):
+    for i in range(10000):
         client.put(path, jsn[0:65000])
 
 def main():
-    # print "Test Case 1:"
-    # for i in range(30):
-    #     print "Trial", i, "\n"
-    #     test_case_1()
-    #     print "End Trial", i, "\n"
-    #     sleep(1)
-    # sleep(15)
-    test_case_3()
+    client.put(path, str(1))
+    sleep(1)
+    print "Test Case 1:"
+    for i in range(1):
+        print "Trial", i, "\n"
+        test_case_1()
+        print "End Trial", i, "\n"
+        sleep(0.2)
+    # test_case_3()
     # print "Test Case 2:"
     # for i in range(30):
     #     print "Trial", i, ":"
@@ -95,6 +96,7 @@ def main():
     #     print "End Trial", i, "\n"
     #     sleep(1)
 
+    client.put(path, str(1))
     client.stop()
 
 if __name__ == "__main__":
