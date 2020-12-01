@@ -4,6 +4,8 @@ from time import sleep
 
 # Hard limit of 9203 for the substring/ character limit
 
+num_tests = 10
+
 if len(sys.argv) > 1:
     ip = sys.argv[1]
     print("IP: ", ip)
@@ -39,7 +41,7 @@ def test_case_2():
     Sends the first 9203 characters in the string representation
     of the json file.
     """
-    for i in range(loop_len):
+    for i in range(1000):
         osc.send_message('/ping', [jsn[0:9203]], safer=True)
 
 
@@ -49,33 +51,35 @@ def test_case_3():
     Sends the first 65000 characters in the string representation
     of the json file to simulate a max packet size.
     """
-    for i in range(loop_len):
+    for i in range(1000):
         osc.send_message('/ping', [jsn[0:65000]], safer=True)
 
 def main():
-#     print "Test Case 1:"
-#     for i in range(30):
-#         print "Trial", i, "\n"
-#         test_case_1()
-#         print "End Trial", i, "\n"
-#         sleep(3)
-#     sleep(30)
+    osc.send_message('/ping', [1], safer=True)
+    sleep(5)
+    print "Test Case 1:"
+    for i in range(num_tests):
+        print "Trial", i, "\n"
+        test_case_1()
+        print "End Trial", i, "\n"
+        sleep(3)
+    sleep(5)
 
     # print "Test Case 2:"
-    # for i in range(30):
+    # for i in range(num_tests):
     #     print "Trial", i, ":"
     #     test_case_2()
     #     print "End Trial", i, "\n"
     #     sleep(3)
     # sleep(30)
-
-    print "Test Case 3"
-    for i in range(30):
-        print "Trial", i, ":"
-        test_case_3()
-        print "End Trial", i, "\n"
-        sleep(3)
-
+    #
+    # print "Test Case 3"
+    # for i in range(num_tests):
+    #     print "Trial", i, ":"
+    #     test_case_3()
+    #     print "End Trial", i, "\n"
+    #     sleep(3)
+    osc.send_message('/ping', [1], safer=True)
 
 if __name__ == "__main__":
     main()
