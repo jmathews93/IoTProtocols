@@ -42,7 +42,7 @@ def test_case_1():
     Sends each recrord in the JSON file separately.
     """
 
-    for i in range(100):
+    for i in range(1000):
         list = []
         list.append(data['allTides'][i]['time'])
         list.append(data['allTides'][i]['height'])
