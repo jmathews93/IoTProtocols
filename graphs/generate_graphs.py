@@ -31,7 +31,7 @@ def avg_packets_per_s(file_name):
     for i in range(1, len(data)):
         sum = sum + int(data[i][1])
 
-    avg = sum/30
+    avg = sum/len(data)
 
     return avg
 
@@ -238,7 +238,8 @@ def main():
     plt.legend()
 
     plt.tight_layout()
-    plt.show()
+    # plt.show()
+    plt.savefig('generated_graphs/wan_packets_received_by_pi.png')
     #================================================================================================================================
 
     #LAN PI RECV
@@ -277,7 +278,8 @@ def main():
     plt.legend()
 
     plt.tight_layout()
-    plt.show()
+    # plt.show()
+    plt.savefig('generated_graphs/lan_packets_received_by_pi.png')
 
     #LAN PI SEND
     #================================================================================================================================
@@ -315,7 +317,8 @@ def main():
     plt.legend()
 
     plt.tight_layout()
-    plt.show()
+    # plt.show()
+    plt.savefig('generated_graphs/lan_packets_sent_by_pi.png')
 
     #LAN PC SEND
     #================================================================================================================================
@@ -353,7 +356,8 @@ def main():
     plt.legend()
 
     plt.tight_layout()
-    plt.show()
+    # plt.show()
+    plt.savefig('generated_graphs/lan_packets_sent_by_pc.png')
 
     #LAN PC RECV
     #================================================================================================================================
@@ -391,7 +395,8 @@ def main():
     plt.legend()
 
     plt.tight_layout()
-    plt.show()
+    # plt.show()
+    plt.savefig('generated_graphs/lan_packets_recvd_by_pc.png')
 
 
 if __name__ == '__main__':
