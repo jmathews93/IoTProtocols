@@ -71,7 +71,8 @@ def test_case_3():
         UDPClientSocket.sendto(bytesToSend, serverAddressPort)
 
 def main():
-    osc.send_message('/ping', [1], safer=True)
+    testbytes = str.endcode(1)
+    UDPClientSocket.sendto(testbytes, serverAddressPort)
     sleep(1)
 
 
@@ -97,7 +98,7 @@ def main():
     #     sleep(0.2)
 
 
-    osc.send_message('/ping', [1], safer=True)
+    UDPClientSocket.sendto(testbytes, serverAddressPort)
 
 
 if __name__ == "__main__":
