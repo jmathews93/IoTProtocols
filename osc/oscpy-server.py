@@ -20,7 +20,7 @@ def main():
 
     osc.bind('/ping', callback_message)
     osc.bind(b'/pong', callback_bundle)
-    sleep(1000)
+    sleep(1000000)
     # osc.stop()
 
 if __name__ == "__main__":
