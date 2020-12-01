@@ -97,7 +97,7 @@ def main():
     #     print "End Trial", i, "\n"
     #     sleep(0.2)
 
-
+    sleep(0.2)
     UDPClientSocket.sendto(testbytes, serverAddressPort)
 
 
