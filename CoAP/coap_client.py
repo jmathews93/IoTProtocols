@@ -68,7 +68,7 @@ def test_case_3():
     of the json file to simulate a max packet size.
     """
 
-    for i in range(50):
+    for i in range(100):
         client.put(path, jsn[0:65000])
 
 def main():
