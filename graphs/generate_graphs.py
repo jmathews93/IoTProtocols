@@ -16,6 +16,8 @@
 # OSC Receiving Pi 	3 	634.20 	5.87 	176
 
 import csv, sys
+import numpy as np
+import matplotlib.pyplot as plt
 
 
 #osc wan stats
@@ -108,19 +110,19 @@ def main():
     #######################################################################################################################################################
     #UDP WAN Pi Recv
     udp_wan_recv_pi_test1_avg = avg_packets_per_s('../results/cleaned_data/udp/wan/trial1/udp_test_1_30_trials_receiving_pi.csv')
-    print("OSC WAN Rcv pi Test1: " + str(udp_wan_recv_pi_test1_avg))
+    print("UDP WAN Rcv pi Test1: " + str(udp_wan_recv_pi_test1_avg))
     udp_wan_recv_pi_test2_avg = avg_packets_per_s('../results/cleaned_data/udp/wan/trial2/udp_test_2_30_trials_receiving_pi.csv')
-    print("OSC WAN Rcv pi Test2: " + str(udp_wan_recv_pi_test2_avg))
+    print("UDP WAN Rcv pi Test2: " + str(udp_wan_recv_pi_test2_avg))
     udp_wan_recv_pi_test3_avg = avg_packets_per_s('../results/cleaned_data/udp/wan/trial3/udp_test_3_30_trials_receiving_pi.csv')
-    print("OSC WAN Rcv pi Test3: " + str(udp_wan_recv_pi_test3_avg))
+    print("UDP WAN Rcv pi Test3: " + str(udp_wan_recv_pi_test3_avg))
 
     #UDP WAN Pc Send
     udp_wan_send_pc_test1_avg = avg_packets_per_s('../results/cleaned_data/udp/wan/trial1/udp_test_1_30_trials_sending_jgtmac.csv')
-    print("OSC WAN send pc Test1: " + str(udp_wan_send_pc_test1_avg))
+    print("UDP WAN send pc Test1: " + str(udp_wan_send_pc_test1_avg))
     udp_wan_send_pc_test2_avg = avg_packets_per_s('../results/cleaned_data/udp/wan/trial2/udp_test_2_30_trials_sending_jgtmac.csv')
-    print("OSC WAN send pc Test2: " + str(udp_wan_send_pc_test2_avg))
+    print("UDP WAN send pc Test2: " + str(udp_wan_send_pc_test2_avg))
     udp_wan_send_pc_test3_avg = avg_packets_per_s('../results/cleaned_data/udp/wan/trial3/udp_test_3_30_trials_sending_jgtmac.csv')
-    print("OSC WAN send pc Test3: " + str(udp_wan_send_pc_test3_avg))
+    print("UDP WAN send pc Test3: " + str(udp_wan_send_pc_test3_avg))
 
     #UDP LAN
     ###################################
@@ -196,12 +198,200 @@ def main():
     coap_lan_recv_pc_test3_avg = avg_packets_per_s('../results/cleaned_data/coap/lan/trial3/coap_trial3_receiving_jam.csv')
     print("COAP LAN Rcv pc Test3: " + str(coap_lan_recv_pc_test3_avg * 30))
     #endregion
-    
+
     ##################################################################################################################
     #GRAPHS
     #############
+    #WAN PI RECV
+    #================================================================================================================================
+    # data to plot
+    n_groups = 3
+    means_osc = (osc_wan_recv_pi_test1_avg, osc_wan_recv_pi_test2_avg, osc_wan_recv_pi_test3_avg, )
+    means_udp = (udp_wan_recv_pi_test1_avg, udp_wan_recv_pi_test2_avg, udp_wan_recv_pi_test3_avg)
+    means_coap = (coap_wan_recv_pi_test1_avg, 0, 0)
 
+    # create plot
+    fig, ax = plt.subplots()
+    index = np.arange(n_groups)
+    bar_width = 0.15
+    opacity = 0.8
 
+    rects1 = plt.bar(index, means_osc, bar_width,
+    alpha=opacity,
+    color='b',
+    label='OSC')
+
+    rects2 = plt.bar(index + bar_width, means_udp, bar_width,
+    alpha=opacity,
+    color='g',
+    label='UDP')
+
+    rects3 = plt.bar(index + (bar_width*2), means_coap, bar_width,
+    alpha=opacity,
+    color='r',
+    label='COaP')
+
+    plt.xlabel('Trial')
+    plt.ylabel('Packets/s')
+    plt.title('Packets Received by Pi over WAN')
+    plt.xticks(index + bar_width, ('Trial 1', 'Trial 2', 'Trial 3'))
+    plt.legend()
+
+    plt.tight_layout()
+    plt.show()
+    #================================================================================================================================
+
+    #LAN PI RECV
+    #================================================================================================================================
+    # data to plot
+    n_groups = 3
+    means_osc = (osc_lan_recv_pi_test1_avg, osc_lan_recv_pi_test2_avg, osc_lan_recv_pi_test3_avg, )
+    means_udp = (udp_lan_recv_pi_test1_avg, udp_lan_recv_pi_test2_avg, udp_lan_recv_pi_test3_avg)
+    means_coap = (coap_lan_recv_pi_test1_avg, coap_lan_recv_pi_test2_avg, coap_lan_recv_pi_test3_avg)
+
+    # create plot
+    fig, ax = plt.subplots()
+    index = np.arange(n_groups)
+    bar_width = 0.15
+    opacity = 0.8
+
+    rects1 = plt.bar(index, means_osc, bar_width,
+    alpha=opacity,
+    color='b',
+    label='OSC')
+
+    rects2 = plt.bar(index + bar_width, means_udp, bar_width,
+    alpha=opacity,
+    color='g',
+    label='UDP')
+
+    rects3 = plt.bar(index + (bar_width*2), means_coap, bar_width,
+    alpha=opacity,
+    color='r',
+    label='COaP')
+
+    plt.xlabel('Trial')
+    plt.ylabel('Packets/s')
+    plt.title('Packets Received by Pi over LAN')
+    plt.xticks(index + bar_width, ('Trial 1', 'Trial 2', 'Trial 3'))
+    plt.legend()
+
+    plt.tight_layout()
+    plt.show()
+
+    #LAN PI SEND
+    #================================================================================================================================
+    # data to plot
+    n_groups = 3
+    means_osc = (osc_lan_send_pi_test1_avg, osc_lan_send_pi_test2_avg, osc_lan_send_pi_test3_avg, )
+    means_udp = (udp_lan_send_pi_test1_avg, udp_lan_send_pi_test2_avg, udp_lan_send_pi_test3_avg)
+    means_coap = (coap_lan_send_pi_test1_avg, coap_lan_send_pi_test2_avg, coap_lan_send_pi_test3_avg)
+
+    # create plot
+    fig, ax = plt.subplots()
+    index = np.arange(n_groups)
+    bar_width = 0.15
+    opacity = 0.8
+
+    rects1 = plt.bar(index, means_osc, bar_width,
+    alpha=opacity,
+    color='b',
+    label='OSC')
+
+    rects2 = plt.bar(index + bar_width, means_udp, bar_width,
+    alpha=opacity,
+    color='g',
+    label='UDP')
+
+    rects3 = plt.bar(index + (bar_width*2), means_coap, bar_width,
+    alpha=opacity,
+    color='r',
+    label='COaP')
+
+    plt.xlabel('Trial')
+    plt.ylabel('Packets/s')
+    plt.title('Packets Sent by Pi over LAN')
+    plt.xticks(index + bar_width, ('Trial 1', 'Trial 2', 'Trial 3'))
+    plt.legend()
+
+    plt.tight_layout()
+    plt.show()
+
+    #LAN PC SEND
+    #================================================================================================================================
+    # data to plot
+    n_groups = 3
+    means_osc = (osc_lan_send_pc_test1_avg, osc_lan_send_pc_test2_avg, osc_lan_send_pc_test3_avg, )
+    means_udp = (udp_lan_send_pc_test1_avg, udp_lan_send_pc_test2_avg, udp_lan_send_pc_test3_avg)
+    means_coap = (coap_lan_send_pc_test1_avg, coap_lan_send_pc_test2_avg, coap_lan_send_pc_test3_avg)
+
+    # create plot
+    fig, ax = plt.subplots()
+    index = np.arange(n_groups)
+    bar_width = 0.15
+    opacity = 0.8
+
+    rects1 = plt.bar(index, means_osc, bar_width,
+    alpha=opacity,
+    color='b',
+    label='OSC')
+
+    rects2 = plt.bar(index + bar_width, means_udp, bar_width,
+    alpha=opacity,
+    color='g',
+    label='UDP')
+
+    rects3 = plt.bar(index + (bar_width*2), means_coap, bar_width,
+    alpha=opacity,
+    color='r',
+    label='COaP')
+
+    plt.xlabel('Trial')
+    plt.ylabel('Packets/s')
+    plt.title('Packets Sent by PC over LAN')
+    plt.xticks(index + bar_width, ('Trial 1', 'Trial 2', 'Trial 3'))
+    plt.legend()
+
+    plt.tight_layout()
+    plt.show()
+
+    #LAN PC RECV
+    #================================================================================================================================
+    # data to plot
+    n_groups = 3
+    means_osc = (osc_lan_recv_pc_test1_avg, osc_lan_recv_pc_test2_avg, osc_lan_recv_pc_test3_avg, )
+    means_udp = (udp_lan_recv_pc_test1_avg, udp_lan_recv_pc_test2_avg, udp_lan_recv_pc_test3_avg)
+    means_coap = (coap_lan_recv_pc_test1_avg, coap_lan_recv_pc_test2_avg, coap_lan_recv_pc_test3_avg)
+
+    # create plot
+    fig, ax = plt.subplots()
+    index = np.arange(n_groups)
+    bar_width = 0.15
+    opacity = 0.8
+
+    rects1 = plt.bar(index, means_osc, bar_width,
+    alpha=opacity,
+    color='b',
+    label='OSC')
+
+    rects2 = plt.bar(index + bar_width, means_udp, bar_width,
+    alpha=opacity,
+    color='g',
+    label='UDP')
+
+    rects3 = plt.bar(index + (bar_width*2), means_coap, bar_width,
+    alpha=opacity,
+    color='r',
+    label='COaP')
+
+    plt.xlabel('Trial')
+    plt.ylabel('Packets/s')
+    plt.title('Packets Received by PC over LAN')
+    plt.xticks(index + bar_width, ('Trial 1', 'Trial 2', 'Trial 3'))
+    plt.legend()
+
+    plt.tight_layout()
+    plt.show()
 
 
 if __name__ == '__main__':

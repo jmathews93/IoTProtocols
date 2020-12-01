@@ -2,4 +2,4 @@ paho-mqtt
 CoAPthon
 oscpy
 numpy
-mathplotlib
+matplotlib
