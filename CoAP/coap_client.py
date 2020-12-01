@@ -57,7 +57,7 @@ def test_case_2():
     of the json file.
     """
 
-    for i in range(1000):
+    for i in range(600):
         client.put(path, jsn[0:9203])
 
 
