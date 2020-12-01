@@ -56,14 +56,13 @@ def test_case_3():
 
 def main():
     osc.send_message('/ping', [1], safer=True)
-    sleep(5)
+    sleep(1)
     print "Test Case 1:"
     for i in range(num_tests):
         print "Trial", i, "\n"
         test_case_1()
         print "End Trial", i, "\n"
-        sleep(3)
-    sleep(5)
+        sleep(0.2)
 
     # print "Test Case 2:"
     # for i in range(num_tests):
