@@ -34,4 +34,12 @@ All graphs are located in graphs/generated_graphs folder.
 graphs/generated_graphs_old are deprecated.
 Charts in graphs/line_charts are quite gross so cleaner versions of them are in graphs/cleaner.
 
-Graphs can all be regenerated with graphs/generate_graphs.py though beware, it's very ugly and will require some prior knowledge on matplotlib to get working cleanly. Each graph should be generated sepeartely for now until I can get in and clean it all up to make them all run in one go.
+Graphs can all be regenerated with graphs/generate_graphs.py though beware, it's very ugly and will require some prior knowledge on matplotlib to get working cleanly. 
+
+Added support to either save or show graphs from graphs/generate_graphs.py
+first commmand argument is for save and second is for show.
+Input a 1 to save or show. Anything else does nothing.
+
+EX.
+python3 generate_graphs.py 0 1 (to show and not save)
+python3 generate_graphs.py 1 1 (to show and save)
