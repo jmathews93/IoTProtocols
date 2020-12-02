@@ -452,6 +452,7 @@ def main():
     
     #region LINE GRAPHS
     #############################
+    #region LAN LiineCharts
     #region LAN Pi Recv Trial 1
     osc_x1, osc_y1 = get_x_and_y('../updated_results/lan/osc/test1/osc_test1_lan_receiving_pi.txt')
     udp_x2, udp_y2 = get_x_and_y('../updated_results/lan/udp/udp_test1_lan_receiving_pi.txt')
@@ -894,6 +895,307 @@ def main():
     if save:
         plt.savefig('generated_graphs/cleaner/lan_packets_sent_by_pc_line_chart_test_3.png')
 
+    #endregion
+    #endregion
+
+    #region WAN LineCharts
+    #region WAN Pi Recv Trial 1
+    osc_x1, osc_y1 = get_x_and_y('../updated_results/osc/osc_test1_wan_receiving_pi.txt')
+    udp_x2, udp_y2 = get_x_and_y('../updated_results/udp/udp_trial1_wan_recevivng_pi.txt')
+    coap_x3, coap_y3 = get_x_and_y('../updated_results/coap/coap_test1_wan_receiving_pi.txt')
+    
+
+    # list_of_x = [osc_x1[len(osc_x1) - 1], udp_x2[len(udp_x2) -1 ], coap_x3[len(coap_x3) - 1]]
+    # min_len = min(i for i in list_of_x) - 1 
+
+    # osc_min = get_index_of_num_in_list_closest_to_another(osc_x1, min_len)
+    # udp_min = get_index_of_num_in_list_closest_to_another(udp_x2, min_len)
+    # coap_min = get_index_of_num_in_list_closest_to_another(coap_x3, min_len)
+
+    #get dem bois all the same length
+    # plt.plot(osc_x1[0:osc_min], osc_y1[0:osc_min], label = "OSC")
+    # plt.plot(udp_x2[0:udp_min], udp_y2[0:udp_min], label = "UDP")
+    # plt.plot(coap_x3[0:coap_min], coap_y3[0:coap_min], label = "CoAP")
+
+    #cleaner
+    start = 20
+    num = 100
+    plt.plot(osc_x1[start:num], osc_y1[start:num], label = "OSC", linewidth=1)
+    plt.plot(udp_x2[start:num], udp_y2[start:num], label = "UDP")
+    plt.plot(coap_x3[start:num], coap_y3[start:num], label = "CoAP", linewidth=1)
+
+    plt.xlabel('time (s)')
+    plt.ylabel('packets/10 ms')
+    plt.title('WAN Pi Receiving Trial 1')
+    # plt.title('WAN Pi Receiving Trial 1 OSC')
+    # plt.title('WAN Pi Receiving Trial 1 UDP')
+    # plt.title('WAN Pi Receiving Trial 1 CoAP')
+    plt.legend(loc='upper right')
+    if show:
+        plt.show()
+    # plt.savefig('generated_graphs/lan_packets_received_by_pi_line_chart.png')
+    # plt.savefig('generated_graphs/OSC_lan_packets_received_by_pi_line_chart.png')
+    # plt.savefig('generated_graphs/UDP_lan_packets_received_by_pi_line_chart.png')
+    # plt.savefig('generated_graphs/COAP_lan_packets_received_by_pi_line_chart.png')
+    if save:
+        plt.savefig('generated_graphs/cleaner/wan/wan_packets_received_by_pi_line_chart.png')
+    #endregion
+
+    #region WAN Pi Send Trial 1
+    osc_x1, osc_y1 = get_x_and_y('../updated_results/osc/osc_test1_wan_sending_pi.txt')
+    udp_x2, udp_y2 = get_x_and_y('../updated_results/udp/udp_trial1_wan_sending_pi.txt')
+    coap_x3, coap_y3 = get_x_and_y('../updated_results/coap/coap_test1_wan_sending_pi.txt')
+    
+
+    # list_of_x = [osc_x1[len(osc_x1) - 1], udp_x2[len(udp_x2) -1 ], coap_x3[len(coap_x3) - 1]]
+    # min_len = min(i for i in list_of_x) - 1 
+
+    # osc_min = get_index_of_num_in_list_closest_to_another(osc_x1, min_len)
+    # udp_min = get_index_of_num_in_list_closest_to_another(udp_x2, min_len)
+    # coap_min = get_index_of_num_in_list_closest_to_another(coap_x3, min_len)
+
+    # get dem bois all the same length
+    # plt.plot(osc_x1[0:osc_min], osc_y1[0:osc_min], label = "OSC", linewidth=1)
+    # plt.plot(udp_x2[0:udp_min], udp_y2[0:udp_min], label = "UDP", linewidth=1)
+    # plt.plot(coap_x3[0:coap_min], coap_y3[0:coap_min], label = "CoAP", linewidth=1)
+
+    #cleaner
+    start = 20
+    num = 200
+    plt.plot(osc_x1[start:num], osc_y1[start:num], label = "OSC", linewidth=1)
+    plt.plot(udp_x2[start:num], udp_y2[start:num], label = "UDP")
+    plt.plot(coap_x3[start:num], coap_y3[start:num], label = "CoAP", linewidth=1)
+
+    plt.xlabel('time (s)')
+    plt.ylabel('packets/10 ms')
+    plt.title('WAN Pi Sending Trial 1')
+    plt.legend(loc='upper right')
+    if show:
+        plt.show()
+    # plt.savefig('generated_graphs/lan_packets_sent_by_pi_line_chart.png')
+    if save:
+        plt.savefig('generated_graphs/cleaner/wan/wan_packets_sent_by_pi_line_chart.png')
+    #endregion
+
+    #region WAN PC Send Trial 1
+    osc_x1, osc_y1 = get_x_and_y('../updated_results/osc/osc_test1_wan_sending_jgtmac.txt')
+    udp_x2, udp_y2 = get_x_and_y('../updated_results/udp/udp_test1_wan_sending_jgtmac.txt')
+    coap_x3, coap_y3 = get_x_and_y('../updated_results/coap/coap_test1_wan_sending_jgtmac.txt')
+    
+
+    # list_of_x = [osc_x1[len(osc_x1) - 1], udp_x2[len(udp_x2) -1 ], coap_x3[len(coap_x3) - 1]]
+    # min_len = min(i for i in list_of_x) - 1 
+
+    # osc_min = get_index_of_num_in_list_closest_to_another(osc_x1, min_len)
+    # udp_min = get_index_of_num_in_list_closest_to_another(udp_x2, min_len)
+    # coap_min = get_index_of_num_in_list_closest_to_another(coap_x3, min_len)
+
+    # #get dem bois all the same length
+    # num = 100
+    # plt.plot(osc_x1[0:num], osc_y1[0:num], label = "OSC", linewidth=1)
+    # plt.plot(udp_x2[0:num], udp_y2[0:num], label = "UDP")
+    # plt.plot(coap_x3[0:num], coap_y3[0:num], label = "CoAP", linewidth=1)
+
+    #cleaner
+    start = 20
+    num = 200
+    plt.plot(osc_x1[start:num], osc_y1[start:num], label = "OSC", linewidth=1)
+    plt.plot(udp_x2[start:num], udp_y2[start:num], label = "UDP")
+    plt.plot(coap_x3[start:num], coap_y3[start:num], label = "CoAP", linewidth=1)
+
+    plt.xlabel('time (s)')
+    plt.ylabel('packets/10 ms')
+    plt.title('WAN PC Sent Trial 1')
+    plt.legend(loc='upper right')
+    if show:
+        plt.show()
+    # # plt.savefig('generated_graphs/lan_packets_sent_by_pc_line_chart.png')
+    if save:
+        plt.savefig('generated_graphs/cleaner/wan/wan_packets_sent_by_pc_line_chart.png')
+    #endregion
+
+    #region WAN PC Recv Trial 1
+    osc_x1, osc_y1 = get_x_and_y('../updated_results/osc/osc_test1_wan_receiving_jgtmac.txt')
+    udp_x2, udp_y2 = get_x_and_y('../updated_results/udp/udp_trial1_wan_recevivng_jgtmac.txt')
+    coap_x3, coap_y3 = get_x_and_y('../updated_results/coap/coap_test1_wan_receiving_jgtmac.txt')
+    
+
+    # list_of_x = [osc_x1[len(osc_x1) - 1], udp_x2[len(udp_x2) -1 ], coap_x3[len(coap_x3) - 1]]
+    # min_len = min(i for i in list_of_x) - 1 
+
+    # osc_min = get_index_of_num_in_list_closest_to_another(osc_x1, min_len)
+    # udp_min = get_index_of_num_in_list_closest_to_another(udp_x2, min_len)
+    # coap_min = get_index_of_num_in_list_closest_to_another(coap_x3, min_len)
+
+    # #get dem bois all the same length
+    # plt.plot(osc_x1[0:osc_min], osc_y1[0:osc_min], label = "OSC", linewidth=1)
+    # plt.plot(udp_x2[0:udp_min], udp_y2[0:udp_min], label = "UDP", linewidth=1)
+    # plt.plot(coap_x3[0:coap_min], coap_y3[0:coap_min], label = "CoAP", linewidth=1)
+
+    #cleaner
+    start = 20
+    num = 200
+    plt.plot(osc_x1[start:num], osc_y1[start:num], label = "OSC", linewidth=1)
+    plt.plot(udp_x2[start:num], udp_y2[start:num], label = "UDP")
+    plt.plot(coap_x3[start:num], coap_y3[start:num], label = "CoAP", linewidth=1)
+
+    plt.xlabel('time (s)')
+    plt.ylabel('packets/10 ms')
+    plt.title('WAN Pi Receiving Trial 1')
+    plt.legend(loc='upper right')
+    if show:
+        plt.show()
+    # plt.savefig('generated_graphs/lan_packets_recvd_by_pc_line_chart.png')
+    if save:
+        plt.savefig('generated_graphs/cleaner/wan/wan_packets_recvd_by_pc_line_chart.png')
+    #endregion
+
+    #region WAN Pi Recv Trial 2
+    osc_x1, osc_y1 = get_x_and_y('../updated_results/osc/osc_test2_wan_receiving_pi.txt')
+    udp_x2, udp_y2 = get_x_and_y('../updated_results/udp/udp_trial2_wan_recevivng_pi.txt')
+    # coap_x3, coap_y3 = get_x_and_y('../updated_results/coap/coap_test2_wan_receiving_pi.txt')
+    
+
+    # list_of_x = [osc_x1[len(osc_x1) - 1], udp_x2[len(udp_x2) -1 ], coap_x3[len(coap_x3) - 1]]
+    # min_len = min(i for i in list_of_x) - 1 
+
+    # osc_min = get_index_of_num_in_list_closest_to_another(osc_x1, min_len)
+    # udp_min = get_index_of_num_in_list_closest_to_another(udp_x2, min_len)
+    # coap_min = get_index_of_num_in_list_closest_to_another(coap_x3, min_len)
+
+    # #get dem bois all the same length
+    # plt.plot(osc_x1[0:osc_min], osc_y1[0:osc_min], label = "OSC", linewidth=1)
+    # plt.plot(udp_x2[0:udp_min], udp_y2[0:udp_min], label = "UDP", linewidth=1)
+    # plt.plot(coap_x3[0:coap_min], coap_y3[0:coap_min], label = "CoAP", linewidth=1)
+
+    #cleaner
+    start = 20
+    num = 200
+    plt.plot(osc_x1[start:num], osc_y1[start:num], label = "OSC", linewidth=1)
+    plt.plot(udp_x2[start:num], udp_y2[start:num], label = "UDP")
+    # plt.plot(coap_x3[start:num], coap_y3[start:num], label = "CoAP", linewidth=1)
+
+    plt.xlabel('time (s)')
+    plt.ylabel('packets/10 ms')
+    plt.title('WAN Pi Receiving Trial 2')
+    plt.legend(loc='upper right')
+    if show:
+        plt.show()
+    # plt.savefig('generated_graphs/lan_packets_received_by_pi_line_chart_test2.png')
+    if save:
+        plt.savefig('generated_graphs/cleaner/wan/wan_packets_received_by_pi_line_chart_test2.png')
+    #endregion
+
+    #region WAN PC Send Trial 2
+    osc_x1, osc_y1 = get_x_and_y('../updated_results/osc/osc_test2_wan_sending_jgtmac.txt')
+    udp_x2, udp_y2 = get_x_and_y('../updated_results/udp/udp_test2_wan_sending_jgtmac.txt')
+    # coap_x3, coap_y3 = get_x_and_y('../updated_results/coap/coap_test2_wan_sending_jgtmac.txt')
+    
+
+    # list_of_x = [osc_x1[len(osc_x1) - 1], udp_x2[len(udp_x2) -1 ], coap_x3[len(coap_x3) - 1]]
+    # min_len = min(i for i in list_of_x) - 1 
+    # print(min_len) 
+
+    # osc_min = get_index_of_num_in_list_closest_to_another(osc_x1, min_len)
+    # udp_min = get_index_of_num_in_list_closest_to_another(udp_x2, min_len)
+    # coap_min = get_index_of_num_in_list_closest_to_another(coap_x3, min_len)
+
+    # #get dem bois all the same length
+    # plt.plot(osc_x1[0:osc_min], osc_y1[0:osc_min], label = "OSC", linewidth=1)
+    # plt.plot(udp_x2[0:udp_min], udp_y2[0:udp_min], label = "UDP", linewidth=1)
+    # plt.plot(coap_x3[0:coap_min], coap_y3[0:coap_min], label = "CoAP", linewidth=1)
+
+    #cleaner
+    start = 20
+    num = 200
+    plt.plot(osc_x1[start:num], osc_y1[start:num], label = "OSC", linewidth=1)
+    plt.plot(udp_x2[start:num], udp_y2[start:num], label = "UDP")
+    # plt.plot(coap_x3[start:num], coap_y3[start:num], label = "CoAP", linewidth=1)
+
+    plt.xlabel('time (s)')
+    plt.ylabel('packets/10 ms')
+    plt.title('WAN PC Sending Trial 2')
+    plt.legend(loc='upper right')
+    if show:
+        plt.show()
+    # plt.savefig('generated_graphs/lan_packets_sent_by_pc_line_chart_test_2.png')
+    if save:
+        plt.savefig('generated_graphs/cleaner/wan/wan_packets_sent_by_pc_line_chart_test_2.png')
+    #endregion
+    
+    #region WAN Pi Recv Trial 3
+    osc_x1, osc_y1 = get_x_and_y('../updated_results/osc/osc_test3_wan_receiving_pi.txt')
+    udp_x2, udp_y2 = get_x_and_y('../updated_results/udp/udp_trial3_wan_recevivng_pi.txt')
+    # coap_x3, coap_y3 = get_x_and_y('../updated_results/coap/coap_test3_wan_receiving_pi.txt')
+    
+
+    # list_of_x = [osc_x1[len(osc_x1) - 1], udp_x2[len(udp_x2) -1 ], coap_x3[len(coap_x3) - 1]]
+    # min_len = min(i for i in list_of_x) - 1 
+
+    # osc_min = get_index_of_num_in_list_closest_to_another(osc_x1, min_len)
+    # udp_min = get_index_of_num_in_list_closest_to_another(udp_x2, min_len)
+    # coap_min = get_index_of_num_in_list_closest_to_another(coap_x3, min_len)
+
+    # #get dem bois all the same length
+    # plt.plot(osc_x1[0:osc_min], osc_y1[0:osc_min], label = "OSC", linewidth=1)
+    # plt.plot(udp_x2[0:udp_min], udp_y2[0:udp_min], label = "UDP", linewidth=1)
+    # plt.plot(coap_x3[0:coap_min], coap_y3[0:coap_min], label = "CoAP", linewidth=1)
+
+    #cleaner
+    start = 20
+    num = 200
+    plt.plot(osc_x1[start:num], osc_y1[start:num], label = "OSC", linewidth=1)
+    plt.plot(udp_x2[start:num], udp_y2[start:num], label = "UDP")
+    # plt.plot(coap_x3[start:num], coap_y3[start:num], label = "CoAP", linewidth=1)
+
+    plt.xlabel('time (s)')
+    plt.ylabel('packets/10 ms')
+    plt.title('WAN pi Receiving Trial 3')
+    plt.legend(loc='upper right')
+    if show:
+        plt.show()
+    # plt.savefig('generated_graphs/lan_packets_sent_by_pc_line_chart_test_2.png')
+    if save:
+        plt.savefig('generated_graphs/cleaner/wan/wan_packets_recvd_by_pi_line_chart_test_3.png')
+    #endregion
+    
+    #region WAN PC Sent Trial 3
+    osc_x1, osc_y1 = get_x_and_y('../updated_results/osc/osc_test3_wan_sending_jgtmac.txt')
+    udp_x2, udp_y2 = get_x_and_y('../updated_results/udp/udp_test3_wan_sending_jgtmac.txt')
+    # coap_x3, coap_y3 = get_x_and_y('../updated_results/coap/coap_test3_wan_sending_jgtmac.txt')
+    
+
+    # list_of_x = [osc_x1[len(osc_x1) - 1], udp_x2[len(udp_x2) -1 ], coap_x3[len(coap_x3) - 1]]
+    # min_len = min(i for i in list_of_x) - 1 
+    # print(min_len) 
+
+    # osc_min = get_index_of_num_in_list_closest_to_another(osc_x1, min_len)
+    # udp_min = get_index_of_num_in_list_closest_to_another(udp_x2, min_len)
+    # coap_min = get_index_of_num_in_list_closest_to_another(coap_x3, min_len)
+
+    # #get dem bois all the same length
+    # plt.plot(osc_x1[0:osc_min], osc_y1[0:osc_min], label = "OSC", linewidth=1)
+    # plt.plot(udp_x2[0:udp_min], udp_y2[0:udp_min], label = "UDP", linewidth=1)
+    # plt.plot(coap_x3[0:coap_min], coap_y3[0:coap_min], label = "CoAP", linewidth=1)
+
+    #cleaner
+    start = 20
+    num = 200
+    plt.plot(osc_x1[start:num], osc_y1[start:num], label = "OSC", linewidth=1)
+    plt.plot(udp_x2[start:num], udp_y2[start:num], label = "UDP")
+    # plt.plot(coap_x3[start:num], coap_y3[start:num], label = "CoAP", linewidth=1)
+
+    plt.xlabel('time (s)')
+    plt.ylabel('packets/10 ms')
+    plt.title('WAN PC Sending Trial 3')
+    plt.legend(loc='upper right')
+    if show:
+        plt.show()
+    # plt.savefig('generated_graphs/lan_packets_sent_by_pc_line_chart_test_2.png')
+    if save:
+        plt.savefig('generated_graphs/cleaner/wan/wan_packets_sent_by_pc_line_chart_test_3.png')
+
+    #endregion
     #endregion
 
     #region LAN vs WAN LineCharts
