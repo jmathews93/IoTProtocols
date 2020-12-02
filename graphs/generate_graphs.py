@@ -277,6 +277,7 @@ def main():
         plt.show()
     if save:
         plt.savefig('generated_graphs/wan_packets_received_by_pi.png')
+        plt.close()
     #================================================================================================================================
     #endregion
 
@@ -320,6 +321,7 @@ def main():
         plt.show()
     if save:
         plt.savefig('generated_graphs/lan_packets_received_by_pi.png')
+        plt.close()
     #endregion
 
     #region LAN PI SEND
@@ -362,6 +364,7 @@ def main():
         plt.show()
     if save:
         plt.savefig('generated_graphs/lan_packets_sent_by_pi.png')
+        plt.close()
     #endregion
 
     #region LAN PC SEND
@@ -404,6 +407,7 @@ def main():
         plt.show()
     if save:
         plt.savefig('generated_graphs/lan_packets_sent_by_pc.png')
+        plt.close()
     #endregion
 
     #region LAN PC RECV
@@ -446,6 +450,7 @@ def main():
         plt.show()
     if save:
         plt.savefig('generated_graphs/lan_packets_recvd_by_pc.png')
+        plt.close()
     #endregion
     #endregion
     #===============================================================
@@ -493,6 +498,7 @@ def main():
     # plt.savefig('generated_graphs/COAP_lan_packets_received_by_pi_line_chart.png')
     if save:
         plt.savefig('generated_graphs/cleaner/lan_packets_received_by_pi_line_chart.png')
+        plt.close()
     #endregion
 
     #region LAN Pi Send Trial 1
@@ -529,6 +535,7 @@ def main():
     # plt.savefig('generated_graphs/lan_packets_sent_by_pi_line_chart.png')
     if save:
         plt.savefig('generated_graphs/cleaner/lan_packets_sent_by_pi_line_chart.png')
+        plt.close()
     #endregion
 
     #region LAN PC Send Trial 1
@@ -566,6 +573,7 @@ def main():
     # # plt.savefig('generated_graphs/lan_packets_sent_by_pc_line_chart.png')
     if save:
         plt.savefig('generated_graphs/cleaner/lan_packets_sent_by_pc_line_chart.png')
+        plt.close()
     #endregion
 
     #region LAN PC Recv Trial 1
@@ -602,6 +610,7 @@ def main():
     # plt.savefig('generated_graphs/lan_packets_recvd_by_pc_line_chart.png')
     if save:
         plt.savefig('generated_graphs/cleaner/lan_packets_recvd_by_pc_line_chart.png')
+        plt.close()
     #endregion
 
     #region LAN Pi Recv Trial 2
@@ -638,6 +647,7 @@ def main():
     # plt.savefig('generated_graphs/lan_packets_received_by_pi_line_chart_test2.png')
     if save:
         plt.savefig('generated_graphs/cleaner/lan_packets_received_by_pi_line_chart_test2.png')
+        plt.close()
     #endregion
 
     #region LAN Pi Send Trial 2
@@ -674,6 +684,7 @@ def main():
     # plt.savefig('generated_graphs/lan_packets_sent_by_pi_line_chart_test2.png')
     if save:
         plt.savefig('generated_graphs/cleaner/lan_packets_sent_by_pi_line_chart_test2.png')
+        plt.close()
     #endregion
 
     #region LAN PC Recv Trial 2
@@ -710,6 +721,7 @@ def main():
     # plt.savefig('generated_graphs/lan_packets_recvd_by_pc_line_chart_test2.png')
     if save:
         plt.savefig('generated_graphs/cleaner/lan_packets_recvd_by_pc_line_chart_test2.png')
+        plt.close()
     #endregion
 
     #region LAN PC Send Trial 2
@@ -747,6 +759,7 @@ def main():
     # plt.savefig('generated_graphs/lan_packets_sent_by_pc_line_chart_test_2.png')
     if save:
         plt.savefig('generated_graphs/cleaner/lan_packets_sent_by_pc_line_chart_test_2.png')
+        plt.close()
     #endregion
     
     #region LAN Pi Recv Trial 3
@@ -783,6 +796,7 @@ def main():
     # plt.savefig('generated_graphs/lan_packets_sent_by_pc_line_chart_test_2.png')
     if save:
         plt.savefig('generated_graphs/cleaner/lan_packets_recvd_by_pi_line_chart_test_3.png')
+        plt.close()
     #endregion
     
     #region LAN Pi Send Trial 3
@@ -820,6 +834,7 @@ def main():
     # plt.savefig('generated_graphs/lan_packets_sent_by_pc_line_chart_test_2.png')
     if save:
         plt.savefig('generated_graphs/cleaner/lan_packets_sent_by_pi_line_chart_test_3.png')
+        plt.close()
     #endregion
     
     #region LAN PC Recv Trial 3
@@ -856,6 +871,7 @@ def main():
     # plt.savefig('generated_graphs/lan_packets_sent_by_pc_line_chart_test_2.png')
     if save:
         plt.savefig('generated_graphs/cleaner/lan_packets_recvd_by_pc_line_chart_test_3.png')
+        plt.close()
 
     #endregion
     
@@ -894,6 +910,7 @@ def main():
     # plt.savefig('generated_graphs/lan_packets_sent_by_pc_line_chart_test_2.png')
     if save:
         plt.savefig('generated_graphs/cleaner/lan_packets_sent_by_pc_line_chart_test_3.png')
+        plt.close()
 
     #endregion
     #endregion
@@ -939,6 +956,7 @@ def main():
     # plt.savefig('generated_graphs/COAP_lan_packets_received_by_pi_line_chart.png')
     if save:
         plt.savefig('generated_graphs/cleaner/wan/wan_packets_received_by_pi_line_chart.png')
+        plt.close()
     #endregion
 
     #region WAN Pi Send Trial 1
@@ -975,6 +993,7 @@ def main():
     # plt.savefig('generated_graphs/lan_packets_sent_by_pi_line_chart.png')
     if save:
         plt.savefig('generated_graphs/cleaner/wan/wan_packets_sent_by_pi_line_chart.png')
+        plt.close()
     #endregion
 
     #region WAN PC Send Trial 1
@@ -1012,6 +1031,7 @@ def main():
     # # plt.savefig('generated_graphs/lan_packets_sent_by_pc_line_chart.png')
     if save:
         plt.savefig('generated_graphs/cleaner/wan/wan_packets_sent_by_pc_line_chart.png')
+        plt.close()
     #endregion
 
     #region WAN PC Recv Trial 1
@@ -1048,6 +1068,7 @@ def main():
     # plt.savefig('generated_graphs/lan_packets_recvd_by_pc_line_chart.png')
     if save:
         plt.savefig('generated_graphs/cleaner/wan/wan_packets_recvd_by_pc_line_chart.png')
+        plt.close()
     #endregion
 
     #region WAN Pi Recv Trial 2
@@ -1084,6 +1105,7 @@ def main():
     # plt.savefig('generated_graphs/lan_packets_received_by_pi_line_chart_test2.png')
     if save:
         plt.savefig('generated_graphs/cleaner/wan/wan_packets_received_by_pi_line_chart_test2.png')
+        plt.close()
     #endregion
 
     #region WAN PC Send Trial 2
@@ -1121,6 +1143,7 @@ def main():
     # plt.savefig('generated_graphs/lan_packets_sent_by_pc_line_chart_test_2.png')
     if save:
         plt.savefig('generated_graphs/cleaner/wan/wan_packets_sent_by_pc_line_chart_test_2.png')
+        plt.close()
     #endregion
     
     #region WAN Pi Recv Trial 3
@@ -1157,6 +1180,7 @@ def main():
     # plt.savefig('generated_graphs/lan_packets_sent_by_pc_line_chart_test_2.png')
     if save:
         plt.savefig('generated_graphs/cleaner/wan/wan_packets_recvd_by_pi_line_chart_test_3.png')
+        plt.close()
     #endregion
     
     #region WAN PC Sent Trial 3
@@ -1194,6 +1218,7 @@ def main():
     # plt.savefig('generated_graphs/lan_packets_sent_by_pc_line_chart_test_2.png')
     if save:
         plt.savefig('generated_graphs/cleaner/wan/wan_packets_sent_by_pc_line_chart_test_3.png')
+        plt.close()
 
     #endregion
     #endregion
@@ -1220,6 +1245,7 @@ def main():
         plt.show()
     if save:
         plt.savefig('generated_graphs/lan_v_wan/osc_recv_pi_trial1_lan_v_wan.png')
+        plt.close()
     #endregion
 
     #region OSC trial 1 PI Send
@@ -1241,6 +1267,7 @@ def main():
         plt.show()
     if save:
         plt.savefig('generated_graphs/lan_v_wan/osc_send_pi_trial1_lan_v_wan.png')
+        plt.close()
     #endregion
 
     #region OSC trial 1 PC Recv
@@ -1262,6 +1289,7 @@ def main():
         plt.show()
     if save:
         plt.savefig('generated_graphs/lan_v_wan/osc_recv_pc_trial1_lan_v_wan.png')
+        plt.close()
     #endregion
 
     #region OSC trial 1 PC Send
@@ -1283,6 +1311,7 @@ def main():
         plt.show()
     if save:
         plt.savefig('generated_graphs/lan_v_wan/osc_send_pc_trial1_lan_v_wan.png')
+        plt.close()
     #endregion
 
     #region OSC trial 2 PI Recv
@@ -1304,6 +1333,7 @@ def main():
         plt.show()
     if save:
         plt.savefig('generated_graphs/lan_v_wan/osc_recv_pi_trial2_lan_v_wan.png')
+        plt.close()
     #endregion
 
     #region OSC trial 2 PC Send
@@ -1325,6 +1355,7 @@ def main():
         plt.show()
     if save:
         plt.savefig('generated_graphs/lan_v_wan/osc_send_pc_trial2_lan_v_wan.png')
+        plt.close()
     #endregion
 
     #region OSC trial 3 PC Send
@@ -1346,6 +1377,7 @@ def main():
         plt.show()
     if save:
         plt.savefig('generated_graphs/lan_v_wan/osc_send_pc_trial3_lan_v_wan.png')
+        plt.close()
     #endregion
     
     #region OSC trial 3 Pi Recv
@@ -1367,6 +1399,7 @@ def main():
         plt.show()
     if save:
         plt.savefig('generated_graphs/lan_v_wan/osc_recv_pi_trial3_lan_v_wan.png')
+        plt.close()
     #endregion
     #endregion
     
@@ -1390,6 +1423,7 @@ def main():
         plt.show()
     if save:
         plt.savefig('generated_graphs/lan_v_wan/udp_recv_pi_trial1_lan_v_wan.png')
+        plt.close()
     #endregion
 
     #region UDP trial 1 Pi Send
@@ -1411,6 +1445,7 @@ def main():
         plt.show()
     if save:
         plt.savefig('generated_graphs/lan_v_wan/udp_send_pi_trial1_lan_v_wan.png')
+        plt.close()
     #endregion
 
     #region UDP trial 1 PC Recv
@@ -1432,6 +1467,7 @@ def main():
         plt.show()
     if save:
         plt.savefig('generated_graphs/lan_v_wan/udp_recv_pc_trial1_lan_v_wan.png')
+        plt.close()
     #endregion
 
     #region UDP trial 1 PC Send
@@ -1453,6 +1489,7 @@ def main():
         plt.show()
     if save:
         plt.savefig('generated_graphs/lan_v_wan/udp_send_pc_trial1_lan_v_wan.png')
+        plt.close()
     #endregion
 
     #region UDP trial 2 Pi Recv
@@ -1474,6 +1511,7 @@ def main():
         plt.show()
     if save:
         plt.savefig('generated_graphs/lan_v_wan/udp_recv_pi_trial2_lan_v_wan.png')
+        plt.close()
     #endregion
 
     #region UDP trial 2 PC Send
@@ -1495,6 +1533,7 @@ def main():
         plt.show()
     if save:
         plt.savefig('generated_graphs/lan_v_wan/udp_send_pc_trial2_lan_v_wan.png')
+        plt.close()
     #endregion
 
     #region UDP trial 3 PC Send
@@ -1516,6 +1555,7 @@ def main():
         plt.show()
     if save:
         plt.savefig('generated_graphs/lan_v_wan/udp_send_pc_trial3_lan_v_wan.png')
+        plt.close()
     #endregion
 
     #region UDP trial 3 Pi Recv
@@ -1537,6 +1577,7 @@ def main():
         plt.show()
     if save:
         plt.savefig('generated_graphs/lan_v_wan/udp_recv_pi_trial3_lan_v_wan.png')
+        plt.close()
     #endregion
     #endregion
     
@@ -1560,6 +1601,7 @@ def main():
         plt.show()
     if save:
         plt.savefig('generated_graphs/lan_v_wan/coap_recv_pi_trial1_lan_v_wan.png')
+        plt.close()
     #endregion
 
     #region COAP trial 1 Pi Send
@@ -1581,6 +1623,7 @@ def main():
         plt.show()
     if save:
         plt.savefig('generated_graphs/lan_v_wan/coap_send_pi_trial1_lan_v_wan.png')
+        plt.close()
     #endregion
 
     #region COAP trial 1 Pc Recv
@@ -1602,6 +1645,7 @@ def main():
         plt.show()
     if save:
         plt.savefig('generated_graphs/lan_v_wan/coap_recv_pc_trial1_lan_v_wan.png')
+        plt.close()
     #endregion
 
     #region COAP trial 1 PC Send
@@ -1623,6 +1667,7 @@ def main():
         plt.show()
     if save:
         plt.savefig('generated_graphs/lan_v_wan/coap_send_pc_trial1_lan_v_wan.png')
+        plt.close()
     #endregion
 
     #endregion
@@ -1667,6 +1712,7 @@ def main():
         plt.show()
     if save:
         plt.savefig('generated_graphs/bars/wan_v_lan_packets_received_by_pi_trial1.png')
+        plt.close()
     
     #endregion
 
@@ -1704,6 +1750,7 @@ def main():
         plt.show()
     if save:
         plt.savefig('generated_graphs/bars/wan_v_lan_packets_recvd_by_pc_trial1.png')
+        plt.close()
     
     #endregion
     
@@ -1741,6 +1788,7 @@ def main():
         plt.show()
     if save:
         plt.savefig('generated_graphs/bars/wan_v_lan_packets_sent_by_pc_trial2.png')
+        plt.close()
     
     #endregion
     
@@ -1778,6 +1826,7 @@ def main():
         plt.show()
     if save:
         plt.savefig('generated_graphs/bars/wan_v_lan_packets_recvd_by_pi_trial2.png')
+        plt.close()
     
     #endregion
 
@@ -1815,6 +1864,7 @@ def main():
         plt.show()
     if save:
         plt.savefig('generated_graphs/bars/wan_v_lan_packets_recvd_by_pi_trial3.png')
+        plt.close()
     
     #endregion
 
@@ -1852,6 +1902,7 @@ def main():
         plt.show()
     if save:
         plt.savefig('generated_graphs/bars/wan_v_lan_packets_sent_by_pc_trial3.png')
+        plt.close()
     
     #endregion
 
