@@ -20,8 +20,13 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def get_length_no_zeroes(list_of_csv):
+    length = 0
+
     for i in range(len(list_of_csv)):
-        if list_of_csv[i]
+        if list_of_csv[i][1] != 0:
+            length += 1
+    
+    return length
 
 
 
