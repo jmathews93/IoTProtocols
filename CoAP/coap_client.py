@@ -72,14 +72,14 @@ def test_case_3():
         client.put(path, jsn[0:65000])
 
 def main():
-    # client.put(path, str(1))
-    # sleep(1)
-    # print "Test Case 1:"
-    # for i in range(10):
-    #     print "Trial", i, "\n"
-    #     test_case_1()
-    #     print "End Trial", i, "\n"
-    #     sleep(0.2)
+    client.put(path, str(1))
+    sleep(1)
+    print "Test Case 1:"
+    for i in range(10):
+        print "Trial", i, "\n"
+        test_case_1()
+        print "End Trial", i, "\n"
+        sleep(0.2)
     # test_case_3()
     # print "Test Case 2:"
     # for i in range(10):
@@ -89,12 +89,12 @@ def main():
     #     sleep(0.2)
     # sleep(15)
 
-    print "Test Case 3"
-    for i in range(10):
-        print "Trial", i, ":"
-        test_case_3()
-        print "End Trial", i, "\n"
-        sleep(0.2)
+    # print "Test Case 3"
+    # for i in range(10):
+    #     print "Trial", i, ":"
+    #     test_case_3()
+    #     print "End Trial", i, "\n"
+    #     sleep(0.2)
 
     client.put(path, str(1))
     client.stop()

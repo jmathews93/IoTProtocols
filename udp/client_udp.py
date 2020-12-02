@@ -76,12 +76,12 @@ def main():
     sleep(1)
 
 
-    # print "Test Case 1:"
-    # for i in range(30):
-    #     print "Trial", i, "\n"
-    #     test_case_1()
-    #     print "End Trial", i, "\n"
-    #     sleep(0.2)
+    print "Test Case 1:"
+    for i in range(30):
+        print "Trial", i, "\n"
+        test_case_1()
+        print "End Trial", i, "\n"
+        sleep(0.2)
 
     # print "Test Case 2:"
     # for i in range(30):
@@ -90,12 +90,12 @@ def main():
     #     print "End Trial", i, "\n"
     #     sleep(0.2)
     # #
-    print "Test Case 3"
-    for i in range(30):
-        print "Trial", i, ":"
-        test_case_3()
-        print "End Trial", i, "\n"
-        sleep(0.2)
+    # print "Test Case 3"
+    # for i in range(30):
+    #     print "Trial", i, ":"
+    #     test_case_3()
+    #     print "End Trial", i, "\n"
+    #     sleep(0.2)
 
     sleep(0.2)
     UDPClientSocket.sendto(testbytes, serverAddressPort)

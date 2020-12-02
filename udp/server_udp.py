@@ -4,7 +4,7 @@ localIP     = "0.0.0.0"
 localPort   = 5555
 bufferSize  = 1024
 
-msgFromServer       = "Hello UDP Client"
+# msgFromServer       = "Hello UDP Client"
 bytesToSend         = str.encode(msgFromServer)
 
 
