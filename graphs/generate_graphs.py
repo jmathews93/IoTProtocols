@@ -489,17 +489,28 @@ def main():
     # udp_min = get_index_of_num_in_list_closest_to_another(udp_x2, min_len)
     # coap_min = get_index_of_num_in_list_closest_to_another(coap_x3, min_len)
 
-    # #get dem bois all the same length
+    #get dem bois all the same length
     # plt.plot(osc_x1[0:osc_min], osc_y1[0:osc_min], label = "OSC")
     # plt.plot(udp_x2[0:udp_min], udp_y2[0:udp_min], label = "UDP")
     # plt.plot(coap_x3[0:coap_min], coap_y3[0:coap_min], label = "CoAP")
 
+    #for solos not all same length
+    # plt.plot(osc_x1, osc_y1, label = "OSC", linewidth=1)
+    # plt.plot(udp_x2, udp_y2, label = "UDP")
+    # plt.plot(coap_x3, coap_y3, label = "CoAP", linewidth=1)
+
     # plt.xlabel('time (s)')
     # plt.ylabel('packets/10 ms')
     # plt.title('LAN Pi Receiving Trial 1')
+    # plt.title('LAN Pi Receiving Trial 1 OSC')
+    # plt.title('LAN Pi Receiving Trial 1 UDP')
+    # plt.title('LAN Pi Receiving Trial 1 CoAP')
     # plt.legend(loc='upper right')
     # plt.show()
     # plt.savefig('generated_graphs/lan_packets_received_by_pi_line_chart.png')
+    # plt.savefig('generated_graphs/OSC_lan_packets_received_by_pi_line_chart.png')
+    # plt.savefig('generated_graphs/UDP_lan_packets_received_by_pi_line_chart.png')
+    # plt.savefig('generated_graphs/COAP_lan_packets_received_by_pi_line_chart.png')
     #endregion
 
     #region LAN Pi Send Trial 1
@@ -516,17 +527,22 @@ def main():
     # udp_min = get_index_of_num_in_list_closest_to_another(udp_x2, min_len)
     # coap_min = get_index_of_num_in_list_closest_to_another(coap_x3, min_len)
 
-    # #get dem bois all the same length
+    #get dem bois all the same length
     # plt.plot(osc_x1[0:osc_min], osc_y1[0:osc_min], label = "OSC", linewidth=1)
     # plt.plot(udp_x2[0:udp_min], udp_y2[0:udp_min], label = "UDP", linewidth=1)
     # plt.plot(coap_x3[0:coap_min], coap_y3[0:coap_min], label = "CoAP", linewidth=1)
 
-    # plt.xlabel('time (s)')
-    # plt.ylabel('packets/10 ms')
-    # plt.title('LAN Pi Sending Trial 1')
-    # plt.legend(loc='upper right')
-    # # plt.show()
-    # plt.savefig('generated_graphs/lan_packets_sent_by_pi_line_chart.png')
+    #for solos not all same length
+    # plt.plot(osc_x1, osc_y1, label = "OSC", linewidth=1)
+    # plt.plot(udp_x2, udp_y2, label = "UDP")
+    # plt.plot(coap_x3, coap_y3, label = "CoAP", linewidth=1)
+
+    plt.xlabel('time (s)')
+    plt.ylabel('packets/10 ms')
+    plt.title('LAN Pi Sending Trial 1')
+    plt.legend(loc='upper right')
+    # plt.show()
+    plt.savefig('generated_graphs/lan_packets_sent_by_pi_line_chart.png')
     #endregion
 
     #region LAN PC Send Trial 1
