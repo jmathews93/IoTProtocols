@@ -19,6 +19,11 @@ import csv, sys
 import numpy as np
 import matplotlib.pyplot as plt
 
+def get_length_no_zeroes(list_of_csv):
+    for i in range(len(list_of_csv)):
+        if list_of_csv[i]
+
+
 
 def avg_packets_per_s(file_name):
     sum = 0
@@ -187,36 +192,38 @@ def main():
     coap_wan_send_pi_test1_avg = avg_packets_per_s('../updated_results/coap/coap_test1_wan_sending_pi.txt')
     print("Coap WAN Send pi Test1: " + str(coap_wan_send_pi_test1_avg))
 
+    #LAN COAP
+    ##################
     #COap LAN Pi Recv
-    coap_lan_recv_pi_test1_avg = avg_packets_per_s('../updated_results/coap')
+    coap_lan_recv_pi_test1_avg = avg_packets_per_s('../updated_results/coap/coap_test1_lan_receiving_pi.txt')
     print("COAP LAN Rcv pi Test1: " + str(coap_lan_recv_pi_test1_avg))
-    coap_lan_recv_pi_test2_avg = avg_packets_per_s('../updated_results/coap')
+    coap_lan_recv_pi_test2_avg = avg_packets_per_s('../updated_results/coap/coap_test2_lan_receiving_pi.txt')
     print("COAP LAN Rcv pi Test2: " + str(coap_lan_recv_pi_test2_avg))
-    coap_lan_recv_pi_test3_avg = avg_packets_per_s('../updated_results/coap')
+    coap_lan_recv_pi_test3_avg = avg_packets_per_s('../updated_results/coap/coap_test3_lan_receiving_pi.txt')
     print("COAP LAN Rcv pi Test3: " + str(coap_lan_recv_pi_test3_avg))
 
     #COap LAN Pi Send
-    coap_lan_send_pi_test1_avg = avg_packets_per_s('../results/cleaned_data/coap/lan/trial1/coap_lan_test1_sending_piu.csv')
+    coap_lan_send_pi_test1_avg = avg_packets_per_s('../updated_results/lan/coap/coap_test1_lan_sending_pi.txt')
     print("COAP LAN Send pi Test1: " + str(coap_lan_send_pi_test1_avg))
-    coap_lan_send_pi_test2_avg = avg_packets_per_s('../results/cleaned_data/coap/lan/trial2/coap_lan_tria2_sending_pi.csv')
+    coap_lan_send_pi_test2_avg = avg_packets_per_s('../updated_results/lan/coap/coap_test2_lan_sending_pi.txt')
     print("COAP LAN Send pi Test2: " + str(coap_lan_send_pi_test2_avg))
-    coap_lan_send_pi_test3_avg = avg_packets_per_s('../results/cleaned_data/coap/lan/trial3/coap_trial3_sending_pi.csv')
+    coap_lan_send_pi_test3_avg = avg_packets_per_s('../updated_results/lan/coap/coap_test3_lan_sending_pi.txt')
     print("COAP LAN Send pi Test3: " + str(coap_lan_send_pi_test3_avg))
 
     #COap LAN PC Send
-    coap_lan_send_pc_test1_avg = avg_packets_per_s('../results/cleaned_data/coap/lan/trial1/coap_lan_test1_seding_jamU.csv')
+    coap_lan_send_pc_test1_avg = avg_packets_per_s('../updated_results/lan/coap/coap_test1_lan_sending_jammac.txt')
     print("COAP LAN Send pc Test1: " + str(coap_lan_send_pc_test1_avg))
-    coap_lan_send_pc_test2_avg = avg_packets_per_s('../results/cleaned_data/coap/lan/trial2/coap_lan_trial2_sending_jam.csv')
+    coap_lan_send_pc_test2_avg = avg_packets_per_s('../updated_results/lan/coap/coap_test2_lan_sending_jammac.txt')
     print("COAP LAN Send pc Test2: " + str(coap_lan_send_pc_test2_avg))
-    coap_lan_send_pc_test3_avg = avg_packets_per_s('../results/cleaned_data/coap/lan/trial3/coap_trial3_sending_jam.csv')
+    coap_lan_send_pc_test3_avg = avg_packets_per_s('../updated_results/lan/coap/coap_test3_lan_sending_jammac.txt')
     print("COAP LAN Send pc Test3: " + str(coap_lan_send_pc_test3_avg))
 
     #COap LAN PC Recv
-    coap_lan_recv_pc_test1_avg = avg_packets_per_s('../results/cleaned_data/coap/lan/trial1/coap_lan_test1_receiving_jamu.csv')
+    coap_lan_recv_pc_test1_avg = avg_packets_per_s('../updated_results/lan/coap/coap_test1_lan_receiving_jammac.txt')
     print("COAP LAN Rcv pc Test1: " + str(coap_lan_recv_pc_test1_avg))
-    coap_lan_recv_pc_test2_avg = avg_packets_per_s('../results/cleaned_data/coap/lan/trial2/coap_lan_trial2_receiving_jam.csv')
+    coap_lan_recv_pc_test2_avg = avg_packets_per_s('../updated_results/lan/coap/coap_test2_lan_receiving_jammac.txt')
     print("COAP LAN Rcv pc Test2: " + str(coap_lan_recv_pc_test2_avg))
-    coap_lan_recv_pc_test3_avg = avg_packets_per_s('../results/cleaned_data/coap/lan/trial3/coap_trial3_receiving_jam.csv')
+    coap_lan_recv_pc_test3_avg = avg_packets_per_s('../updated_results/lan/coap/coap_test3_lan_receiving_jammac.txt')
     print("COAP LAN Rcv pc Test3: " + str(coap_lan_recv_pc_test3_avg))
     #endregion
 
