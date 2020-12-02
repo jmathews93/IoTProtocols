@@ -27,6 +27,9 @@ python udp/server_udp.py
 
 python udp/client_udp.py [IP_ADDRESS] [File To Send]
 
+
+RELEVANT INFO
+--------------
 All graphs are located in graphs/generated_graphs folder.
 graphs/generated_graphs_old are deprecated
 Charts in graphs/line_charts are quite gross so cleaner versions of them are in graphs/cleaner
